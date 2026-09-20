@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # IoT Asset Tracker
 
 An STM32-based IoT asset tracking and monitoring system for logistics and asset-management applications.
@@ -15,6 +15,7 @@ The STM32 collects data from multiple sensors and peripherals, generates structu
 
 The ESP32 provides Wi-Fi connectivity and forwards the telemetry to an MQTT broker.
 
+git push
 A Python Flask backend subscribes to the MQTT topic, stores telemetry in SQLite, and provides REST APIs used by the web dashboard.
 
 
@@ -86,6 +87,4 @@ IOT-Asset-Tracker/
 └── README.md
 Technologies
 STM32F446RE Embedded C STM32 HAL I2C SPI UART ESP32 MQTT Flask SQLite JavaScript
-=======
-y
->>>>>>> 292455dffd2993c4b2c551a567435908b025490d
+
