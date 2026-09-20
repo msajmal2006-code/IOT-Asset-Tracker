@@ -13,7 +13,7 @@ The system is designed to monitor an asset using an STM32F446RE microcontroller.
 
 The STM32 collects data from multiple sensors and peripherals, generates structured JSON telemetry, stores telemetry locally in external SPI Flash, and sends the data to an ESP32 through UART.
 
-The ESP32 provides Wi-Fi connectivity and forwards the telemetry to an MQTT broker.
+The ESP01 provides Wi-Fi connectivity and forwards the telemetry to an MQTT broker.
 
 git push
 A Python Flask backend subscribes to the MQTT topic, stores telemetry in SQLite, and provides REST APIs used by the web dashboard.
