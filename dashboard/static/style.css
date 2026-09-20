@@ -1,0 +1,978 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    padding: 25px;
+    background: #20252b;
+    color: white;
+}
+
+header h1 {
+    margin: 0 0 8px 0;
+}
+
+#status {
+    font-size: 14px;
+}
+
+main {
+    padding: 25px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #f0f0f0;
+}
+
+@media (max-width: 700px) {
+
+    main {
+        padding: 12px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+}* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f3f6fa;
+
+    color: #172033;
+}
+
+
+/* =========================================
+   TOP HEADER
+   ========================================= */
+
+.topbar {
+
+    min-height: 105px;
+
+    padding: 20px 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #145cc7,
+            #123c83
+        );
+
+    box-shadow:
+        0 4px 18px rgba(20, 53, 105, 0.25);
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.brand-icon {
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+
+    background: rgba(255,255,255,0.15);
+
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+
+.brand h1 {
+
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+
+.brand p {
+
+    margin: 5px 0 0;
+
+    color: #d9e8ff;
+
+    font-size: 14px;
+}
+
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+.connection-status {
+
+    padding: 11px 18px;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    border-radius: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+
+.status-dot {
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #ffb000;
+
+    box-shadow:
+        0 0 8px rgba(255,176,0,0.8);
+}
+
+
+.date-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-left: 20px;
+
+    border-left:
+        1px solid rgba(255,255,255,0.3);
+
+    font-size: 13px;
+}
+
+
+.calendar-icon {
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.12);
+
+    font-size: 20px;
+}
+
+
+#clock {
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+
+    width: 94%;
+
+    max-width: 1500px;
+
+    margin: 28px auto;
+}
+
+
+/* =========================================
+   METRIC GRID
+   ========================================= */
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 17px;
+}
+
+
+/* =========================================
+   METRIC CARD
+   ========================================= */
+
+.metric-card {
+
+    position: relative;
+
+    min-height: 126px;
+
+    padding: 22px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    overflow: hidden;
+
+    border: 1px solid;
+
+    box-shadow:
+        0 4px 13px rgba(30, 50, 80, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.metric-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 20px rgba(30, 50, 80, 0.13);
+}
+
+
+/* =========================================
+   CARD COLORS
+   ========================================= */
+
+.blue {
+
+    background: #edf6ff;
+
+    border-color: #c7e1ff;
+}
+
+
+.red {
+
+    background: #fff0f1;
+
+    border-color: #ffd0d3;
+}
+
+
+.green {
+
+    background: #edfbf4;
+
+    border-color: #c8f0dc;
+}
+
+
+.orange {
+
+    background: #fff8e9;
+
+    border-color: #ffe1a8;
+}
+
+
+.purple {
+
+    background: #f5f1ff;
+
+    border-color: #ded3ff;
+}
+
+
+/* =========================================
+   ICON
+   ========================================= */
+
+.metric-icon {
+
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 27px;
+
+    font-weight: bold;
+}
+
+
+.blue .metric-icon {
+    background: #1478e8;
+}
+
+
+.red .metric-icon {
+    background: #ed3c48;
+}
+
+
+.green .metric-icon {
+    background: #18a957;
+}
+
+
+.orange .metric-icon {
+    background: #f3a000;
+}
+
+
+.purple .metric-icon {
+    background: #7046db;
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.metric-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 0;
+}
+
+
+.metric-content span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #58657a;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+}
+
+
+.metric-content strong {
+
+    display: block;
+
+    color: #152038;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    overflow-wrap: anywhere;
+}
+
+
+.metric-content small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #657187;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   WATERMARK
+   ========================================= */
+
+.watermark {
+
+    position: absolute;
+
+    right: 16px;
+
+    bottom: -8px;
+
+    font-size: 74px;
+
+    opacity: 0.09;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   HISTORY
+   ========================================= */
+
+.history-card {
+
+    margin-top: 24px;
+
+    padding: 22px;
+
+    background: white;
+
+    border-radius: 13px;
+
+    border: 1px solid #e0e6ee;
+
+    box-shadow:
+        0 4px 15px rgba(30, 50, 80, 0.08);
+}
+
+
+.history-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+
+.history-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.database-icon {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    color: #1478e8;
+
+    background: #eaf4ff;
+}
+
+
+.history-title h2 {
+
+    margin: 0;
+
+    font-size: 20px;
+
+    color: #18233a;
+}
+
+
+.history-title p {
+
+    margin: 4px 0 0;
+
+    color: #778398;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   REFRESH BUTTON
+   ========================================= */
+
+#refreshButton {
+
+    padding: 10px 17px;
+
+    border-radius: 22px;
+
+    border: 1px solid #9bc8ff;
+
+    background: white;
+
+    color: #1478e8;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+#refreshButton:hover {
+
+    background: #edf6ff;
+}
+
+
+#refreshButton:active {
+
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   TABLE
+   ========================================= */
+
+.table-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+table {
+
+    width: 100%;
+
+    min-width: 1050px;
+
+    border-collapse: collapse;
+}
+
+
+thead {
+
+    background: #eef3f8;
+}
+
+
+th {
+
+    padding: 13px 12px;
+
+    color: #34425a;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+
+td {
+
+    padding: 13px 12px;
+
+    color: #536075;
+
+    font-size: 13px;
+
+    border-bottom:
+        1px solid #e8edf3;
+
+    white-space: nowrap;
+}
+
+
+tbody tr:hover {
+
+    background: #f8fafc;
+}
+
+
+/* =========================================
+   EMPTY MESSAGE
+   ========================================= */
+
+.empty-message {
+
+    min-height: 100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #627087;
+
+    font-size: 15px;
+}
+
+
+.empty-icon {
+
+    font-size: 34px;
+
+    color: #b5c1d0;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+
+    width: 94%;
+
+    max-width: 1500px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+footer span {
+
+    margin: 0 7px;
+
+    color: #c1cad6;
+}
+
+
+.footer-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.footer-status span {
+
+    width: 9px;
+    height: 9px;
+
+    margin: 0;
+
+    border-radius: 50%;
+
+    background: #20ad5a;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1200px) {
+
+    .dashboard-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .header-right {
+
+        gap: 12px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .topbar {
+
+        padding: 20px 25px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .header-right {
+
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    .dashboard-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    main {
+
+        width: 92%;
+    }
+
+    .dashboard-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .brand h1 {
+
+        font-size: 22px;
+    }
+
+    .brand p {
+
+        font-size: 12px;
+    }
+
+    .header-right {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .date-box {
+
+        padding-left: 0;
+
+        border-left: none;
+    }
+
+    footer {
+
+        width: 92%;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+/* =========================================
+   HEAVY MOTION ALERT
+   ========================================= */
+
+.history-status {
+    text-align: center;
+    width: 55px;
+}
+
+
+/* -----------------------------------------
+   NORMAL MOVEMENT
+   ----------------------------------------- */
+
+.history-normal-dot {
+    display: inline-block;
+
+    color: #25c76a;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1;
+}
+
+
+/* -----------------------------------------
+   HEAVY MOVEMENT
+   ----------------------------------------- */
+
+.history-alert-dot {
+    display: inline-block;
+
+    color: #e53935;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    line-height: 1;
+
+    animation:
+        heavyMotionAlert 0.8s infinite;
+}
+
+
+/* -----------------------------------------
+   HEAVY MOTION ROW
+   ----------------------------------------- */
+
+.heavy-motion-row {
+    background: #fff0f0;
+}
+
+
+.heavy-motion-row td {
+    color: #b71c1c;
+
+    font-weight: 700;
+}
+
+
+/* Keep the red alert visible
+   when the mouse is over the row */
+
+tbody tr.heavy-motion-row:hover {
+    background: #ffe2e2;
+}
+
+
+/* -----------------------------------------
+   RED ALERT ANIMATION
+   ----------------------------------------- */
+
+@keyframes heavyMotionAlert
+{
+    0%
+    {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+    50%
+    {
+        opacity: 0.35;
+
+        transform: scale(1.15);
+    }
+
+    100%
+    {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}

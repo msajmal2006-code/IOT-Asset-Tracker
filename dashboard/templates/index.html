@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>IoT Asset Tracker</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ◉
+        </div>
+
+        <div>
+            <h1>IoT Asset Tracking System</h1>
+
+            <p>
+                Real-time asset monitoring • STM32 + ESP-01 + MQTT
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <div class="connection-status">
+
+            <span class="status-dot"></span>
+
+            <span id="status">
+                Waiting for telemetry
+            </span>
+
+        </div>
+
+        <div class="date-box">
+
+            <div class="calendar-icon">
+                ▣
+            </div>
+
+            <div>
+                <div id="date">
+                    --
+                </div>
+
+                <strong id="clock">
+                    --
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- =========================
+         TELEMETRY CARDS
+         ========================= -->
+
+    <section class="dashboard-grid">
+
+        <div class="metric-card blue">
+
+            <div class="metric-icon">
+                ◆
+            </div>
+
+            <div class="metric-content">
+                <span>ASSET</span>
+                <strong id="asset">--</strong>
+            </div>
+
+            <div class="watermark">
+                ◆
+            </div>
+
+        </div>
+
+
+        <div class="metric-card red">
+
+            <div class="metric-icon">
+                ⚡
+            </div>
+
+            <div class="metric-content">
+                <span>EVENT</span>
+                <strong id="event">--</strong>
+            </div>
+
+            <div class="watermark">
+                ⚡
+            </div>
+
+        </div>
+
+
+        <div class="metric-card green">
+
+            <div class="metric-icon">
+                ●
+            </div>
+
+            <div class="metric-content">
+                <span>GPS FIX</span>
+                <strong id="fix">--</strong>
+            </div>
+
+            <div class="watermark">
+                ◉
+            </div>
+
+        </div>
+
+
+        <div class="metric-card orange">
+
+            <div class="metric-icon">
+                ♨
+            </div>
+
+            <div class="metric-content">
+                <span>TEMPERATURE</span>
+                <strong id="temp">-- °C</strong>
+            </div>
+
+            <div class="watermark">
+                ♨
+            </div>
+
+        </div>
+
+
+        <div class="metric-card purple">
+
+            <div class="metric-icon">
+                💧
+            </div>
+
+            <div class="metric-content">
+                <span>HUMIDITY</span>
+                <strong id="hum">-- %</strong>
+            </div>
+
+            <div class="watermark">
+                💧
+            </div>
+
+        </div>
+
+
+        <div class="metric-card green">
+
+            <div class="metric-icon">
+                ➤
+            </div>
+
+            <div class="metric-content">
+                <span>LATITUDE</span>
+                <strong id="lat">--</strong>
+            </div>
+
+            <div class="watermark">
+                ●
+            </div>
+
+        </div>
+
+
+        <div class="metric-card green">
+
+            <div class="metric-icon">
+                ➤
+            </div>
+
+            <div class="metric-content">
+                <span>LONGITUDE</span>
+                <strong id="lon">--</strong>
+            </div>
+
+            <div class="watermark">
+                ●
+            </div>
+
+        </div>
+
+
+        <div class="metric-card blue">
+
+            <div class="metric-icon">
+                ◔
+            </div>
+
+            <div class="metric-content">
+                <span>SPEED</span>
+                <strong id="speed">--</strong>
+                <small>knots</small>
+            </div>
+
+            <div class="watermark">
+                ◔
+            </div>
+
+        </div>
+
+
+        <div class="metric-card orange">
+
+            <div class="metric-icon">
+                ◈
+            </div>
+
+            <div class="metric-content">
+                <span>COURSE</span>
+                <strong id="course">--</strong>
+                <small>degrees</small>
+            </div>
+
+            <div class="watermark">
+                ◈
+            </div>
+
+        </div>
+
+
+        <div class="metric-card purple">
+
+            <div class="metric-icon">
+                ∿
+            </div>
+
+            <div class="metric-content">
+                <span>ACCEL X</span>
+                <strong id="ax">-- g</strong>
+            </div>
+
+            <div class="watermark">
+                ∿
+            </div>
+
+        </div>
+
+
+        <div class="metric-card purple">
+
+            <div class="metric-icon">
+                ∿
+            </div>
+
+            <div class="metric-content">
+                <span>ACCEL Y</span>
+                <strong id="ay">-- g</strong>
+            </div>
+
+            <div class="watermark">
+                ∿
+            </div>
+
+        </div>
+
+
+        <div class="metric-card purple">
+
+            <div class="metric-icon">
+                ∿
+            </div>
+
+            <div class="metric-content">
+                <span>ACCEL Z</span>
+                <strong id="az">-- g</strong>
+            </div>
+
+            <div class="watermark">
+                ∿
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TELEMETRY HISTORY
+         ========================= -->
+
+    <section class="history-card">
+
+        <div class="history-header">
+
+            <div class="history-title">
+
+                <div class="database-icon">
+                    ▤
+                </div>
+
+                <div>
+                    <h2>Telemetry History</h2>
+
+                    <p>
+                        Latest received telemetry data
+                    </p>
+                </div>
+
+            </div>
+
+
+            <button id="refreshButton"
+                    onclick="updateDashboard()">
+
+                ↻ &nbsp; Refresh
+
+            </button>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Status</th>
+                        <th>Time</th>
+                        <th>Asset</th>
+                        <th>Event</th>
+                        <th>Temp (°C)</th>
+                        <th>Humidity (%)</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Speed</th>
+                        <th>Course</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="history">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div id="emptyMessage"
+             class="empty-message">
+
+            <div class="empty-icon">
+                ▱
+            </div>
+
+            <div>
+                No telemetry received yet
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div>
+        © 2026 IoT Asset Tracker
+        <span>│</span>
+        Built with Flask, MQTT and SQLite
+    </div>
+
+    <div class="footer-status">
+        <span></span>
+        Dashboard Ready
+    </div>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='app.js') }}">
+</script>
+
+</body>
+
+</html>

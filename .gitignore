@@ -1,0 +1,15 @@
+Debug/
+Release/
+.settings/
+
+# Python
+dashboard/venv/
+dashboard/__pycache__/
+dashboard/*.pyc
+
+# Database
+dashboard/telemetry.db
+
+# Environment/secrets
+.env
+*.env

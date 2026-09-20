@@ -1,0 +1,64 @@
+venv\Scripts\python.exe app.py  -> To run my project
+
+
+
+C:\Users\Asus>cd C:\Users\Asus\OneDrive\Desktop\dashboard
+
+C:\Users\Asus\OneDrive\Desktop\dashboard>venv\Scripts\python.exe app.py
+
+
+
+
+
+
+
+Microsoft Windows [Version 10.0.26200.9457]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\System32>cd \
+
+C:\>cd Program files
+
+C:\Program Files>cd Mosquitto
+
+C:\Program Files\Mosquitto>C:\Program Files\Mosquitto>net stop mosquitto
+'C:\Program' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Program Files\Mosquitto>System error 5 has occurred.
+'System' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Program Files\Mosquitto>
+C:\Program Files\Mosquitto>Access is denied.
+C:\Program Files\Mosquitto>net stop mosquitto
+The Mosquitto Broker service is stopping.
+The Mosquitto Broker service was stopped successfully.
+
+
+C:\Program Files\Mosquitto>cd "C:\Program Files\Mosquitto"
+
+C:\Program Files\Mosquitto>notepad mosquitto.conf
+
+C:\Program Files\Mosquitto>cd "C:\Program Files\Mosquitto"
+
+C:\Program Files\Mosquitto>mosquitto -c mosquitto.conf -v
+1789736161: mosquitto version 2.1.2 starting
+1789736161: Config loaded from mosquitto.conf.
+1789736161: Bridge support available.
+1789736161: Persistence support available.
+1789736161: TLS support available.
+1789736161: TLS-PSK support available.
+1789736161: Websockets support available.
+1789736161: Opening ipv4 listen socket on port 1883.
+1789736161: mosquitto version 2.1.2 running
+1789736267: New connection from 10.13.219.55:51248 on port 1883.
+1789736267: New client connected from 10.13.219.55:51248 as auto-0F3C868B-0D07-314A-29D0-B14BADA1C146 (p4, c1, k60).
+1789736267: No will message specified.
+1789736267: Sending CONNACK to auto-0F3C868B-0D07-314A-29D0-B14BADA1C146 (0, 0)
+1789736267: Received PUBLISH from auto-0F3C868B-0D07-314A-29D0-B14BADA1C146 (d0, q0, r0, m0, 'asset/ASSET001/telemetry', ... (170 bytes))
+1789736267: Received DISCONNECT from auto-0F3C868B-0D07-314A-29D0-B14BADA1C146
+1789736267: Client auto-0F3C868B-0D07-314A-29D0-B14BADA1C146 [10.13.219.55:51248] disconnected.
+1789736411: mosquitto version 2.1.2 terminating
+
+C:\Program Files\Mosquitto>mosquitto -c mosquitto.conf -v
