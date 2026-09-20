@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # IoT Asset Tracker
 
 An STM32-based IoT asset tracking and monitoring system for logistics and asset-management applications.
@@ -85,3 +86,6 @@ IOT-Asset-Tracker/
 └── README.md
 Technologies
 STM32F446RE Embedded C STM32 HAL I2C SPI UART ESP32 MQTT Flask SQLite JavaScript
+=======
+y
+>>>>>>> 292455dffd2993c4b2c551a567435908b025490d
