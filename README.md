@@ -87,12 +87,18 @@ IOT-Asset-Tracker/
 └── README.md
 Technologies
 STM32F446RE Embedded C STM32 HAL I2C SPI UART ESP32 MQTT Flask SQLite JavaScript
-###Project Photos
+## Project Photos
 
-### Hardware photos Setup
+### Hardware Setup
 
-![Hardware Setup](media/photo)
+![Hardware Setup](Media/photo/photo1.jpeg)
 
-### Web Dashboard Videos
+![Hardware Setup](Media/photo/photo2.jpeg)
 
-![Dashboard](media//video/Video.mp4)
+![Hardware Setup](Media/photo/photo3.jpeg)
+
+![Hardware Setup](Media/photo/photo4.jpeg)
+
+### Project Demonstration
+
+[Watch the hardware demonstration video](Media/video/Video.mp4)
