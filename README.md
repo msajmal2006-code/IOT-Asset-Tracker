@@ -11,7 +11,7 @@ The project combines embedded firmware, GPS tracking, motion detection, environm
 
 The system is designed to monitor an asset using an STM32F446RE microcontroller.
 
-The STM32 collects data from multiple sensors and peripherals, generates structured JSON telemetry, stores telemetry locally in external SPI Flash, and sends the data to an ESP01 through UART.
+The STM32 collects data from multiple sensors and peripherals, generates structured JSON telemetry, stores telemetry locally in external SPI Flash, and sends the data to an ESP32 through UART.
 
 The ESP01 provides Wi-Fi connectivity and forwards the telemetry to an MQTT broker.
 
@@ -86,5 +86,13 @@ IOT-Asset-Tracker/
 ├── .gitignore
 └── README.md
 Technologies
-STM32F446RE Embedded C STM32 HAL I2C SPI UART ESP01 MQTT Flask SQLite JavaScript
+STM32F446RE Embedded C STM32 HAL I2C SPI UART ESP32 MQTT Flask SQLite JavaScript
+###Project Photos
 
+### Hardware photos Setup
+
+![Hardware Setup](media/photo)
+
+### Web Dashboard Videos
+
+![Dashboard](media//video/Video.mp4)
