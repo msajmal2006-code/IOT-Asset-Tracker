@@ -4,17 +4,6 @@
   * @file           : main.c
   * @brief          : Main program body
   ******************************************************************************
-  * STM32F446RE IoT Asset Tracker
-  *
-  * Hardware:
-  *   NEO-6M   -> UART4  (PC11 RX)
-  *   MPU6500  -> I2C1   (PB8/PB9), INT -> PB10
-  *   DHT11    -> PA1
-  *   W25Q64   -> SPI1   (PA5/PA6/PA7), CS -> PA0
-  *   HM-10    -> USART1 (PB6/PB7)
-  *
-  * No ESP-01 is used.
-  ******************************************************************************
   */
 /* USER CODE END Header */
 
@@ -22,6 +11,8 @@
 
 #include "main.h"
 #include "main_app.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 
 /* Private variables ---------------------------------------------------------*/
@@ -55,14 +46,9 @@ static void MX_UART4_Init(void);
   */
 int main(void)
 {
-  /* MCU Configuration--------------------------------------------------------*/
-
   HAL_Init();
-
-  /* Configure the system clock */
   SystemClock_Config();
 
-  /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
   MX_SPI1_Init();
@@ -70,17 +56,12 @@ int main(void)
   MX_USART1_UART_Init();
   MX_UART4_Init();
 
-  /* Initialize asset tracker application */
   APP_Init();
+  APP_StartRTOS();
+  vTaskStartScheduler();
+  Error_Handler();
 
-
-  /* Infinite loop */
-  while (1)
-  {
-    APP_Loop();
-
-}
-
+  while (1) { }
 }
 /**
   * @brief System Clock Configuration
@@ -293,8 +274,8 @@ static void MX_USART1_UART_Init(void)
   /*
    * USART1:
    *
-   * PB6 -> TX -> HM-10 RX
-   * PB7 -> RX <- HM-10 TX
+   * PB6 -> TX -> esp01 RX
+   * PB7 -> RX <- esp01 TX
    *
    * 9600 baud, 8N1
    */
@@ -458,7 +439,7 @@ static void MX_GPIO_Init(void)
 
 
   /* EXTI interrupt configuration */
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
 
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 }
